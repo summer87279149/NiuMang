@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShareViewController">
+            <connections>
+                <outlet property="inviteCode" destination="OAq-mm-qpD" id="gC1-tW-mgR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="屏幕快照 2018-01-16 下午4.08.10.png" translatesAutoresizingMaskIntoConstraints="NO" id="RZA-OJ-oFh">
+                    <rect key="frame" x="0.0" y="20" width="375" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="ZZ5-0a-uGs"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYb-uJ-hDq">
+                    <rect key="frame" x="30" y="280" width="315" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.36056433100000002" blue="0.17194176580000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="PDv-WQ-odh"/>
+                    </constraints>
+                    <state key="normal" title="点击分享">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="share:" destination="-1" eventType="touchUpInside" id="0eo-GT-BJp"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAq-mm-qpD">
+                    <rect key="frame" x="166.5" y="202" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="填写他人邀请码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PgU-OQ-jRd">
+                    <rect key="frame" x="30" y="242" width="315" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrw-83-t8H">
+                    <rect key="frame" x="315" y="242" width="30" height="30"/>
+                    <state key="normal" title="OK">
+                        <color key="titleColor" red="1" green="0.36056433100000002" blue="0.17194176580000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="inviteBtn:" destination="-1" eventType="touchUpInside" id="wVp-fH-odq"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.95693093538284302" green="0.95307332277297974" blue="0.94869500398635864" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="gYb-uJ-hDq" secondAttribute="trailing" constant="30" id="2sJ-rF-ULI"/>
+                <constraint firstItem="OAq-mm-qpD" firstAttribute="top" secondItem="RZA-OJ-oFh" secondAttribute="bottom" constant="22" id="404-dn-pPC"/>
+                <constraint firstItem="RZA-OJ-oFh" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="5pi-5F-d99"/>
+                <constraint firstItem="PgU-OQ-jRd" firstAttribute="width" secondItem="gYb-uJ-hDq" secondAttribute="width" id="9sB-bJ-vDr"/>
+                <constraint firstItem="gYb-uJ-hDq" firstAttribute="top" secondItem="RZA-OJ-oFh" secondAttribute="bottom" constant="100" id="HhA-0b-OHn"/>
+                <constraint firstItem="PgU-OQ-jRd" firstAttribute="leading" secondItem="gYb-uJ-hDq" secondAttribute="leading" id="IFn-X6-IOY"/>
+                <constraint firstItem="Jrw-83-t8H" firstAttribute="trailing" secondItem="gYb-uJ-hDq" secondAttribute="trailing" id="JCc-Nn-ub3"/>
+                <constraint firstItem="gYb-uJ-hDq" firstAttribute="top" secondItem="Jrw-83-t8H" secondAttribute="bottom" constant="8" id="KsR-WI-QL7"/>
+                <constraint firstItem="OAq-mm-qpD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZDo-zG-Fct"/>
+                <constraint firstItem="RZA-OJ-oFh" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="cG6-Bz-H9V"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="RZA-OJ-oFh" secondAttribute="trailing" id="icw-RF-vfD"/>
+                <constraint firstItem="gYb-uJ-hDq" firstAttribute="top" secondItem="PgU-OQ-jRd" secondAttribute="bottom" constant="8" id="odu-iy-8Eg"/>
+                <constraint firstItem="gYb-uJ-hDq" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="30" id="wDu-Mn-PxF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="屏幕快照 2018-01-16 下午4.08.10.png" width="1466" height="632"/>
+    </resources>
+</document>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" reuseIdentifier="cell" id="civ-uf-dM8" customClass="SearchCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="180" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taozi.png" translatesAutoresizingMaskIntoConstraints="NO" id="gTR-8c-WxF">
+                        <rect key="frame" x="10" y="0.0" width="160" height="100"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgf-D9-72P">
+                        <rect key="frame" x="10" y="126" width="160" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.84932185910000002" green="0.19848532529999999" blue="0.04385337374" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xj3-iV-2ro">
+                        <rect key="frame" x="10" y="109" width="160" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="xj3-iV-2ro" firstAttribute="width" secondItem="gTR-8c-WxF" secondAttribute="width" id="4xE-BQ-Pqh"/>
+                <constraint firstItem="Rgf-D9-72P" firstAttribute="leading" secondItem="civ-uf-dM8" secondAttribute="leading" constant="10" id="6OR-pc-R8Z"/>
+                <constraint firstAttribute="trailing" secondItem="gTR-8c-WxF" secondAttribute="trailing" constant="10" id="7ue-uJ-Rh3"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rgf-D9-72P" secondAttribute="trailing" symbolic="YES" id="I9Z-M1-kIJ"/>
+                <constraint firstItem="xj3-iV-2ro" firstAttribute="leading" secondItem="civ-uf-dM8" secondAttribute="leading" constant="10" id="M5Q-6c-gZl"/>
+                <constraint firstItem="gTR-8c-WxF" firstAttribute="leading" secondItem="civ-uf-dM8" secondAttribute="leading" constant="10" id="WYK-mT-Nj2"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xj3-iV-2ro" secondAttribute="trailing" symbolic="YES" id="kqb-SR-7v1"/>
+                <constraint firstItem="Rgf-D9-72P" firstAttribute="top" secondItem="xj3-iV-2ro" secondAttribute="bottom" constant="2" id="lhd-F1-XUB"/>
+                <constraint firstItem="xj3-iV-2ro" firstAttribute="top" secondItem="gTR-8c-WxF" secondAttribute="bottom" constant="3" id="rBZ-6a-8BQ"/>
+                <constraint firstItem="gTR-8c-WxF" firstAttribute="top" secondItem="civ-uf-dM8" secondAttribute="top" id="rWK-lb-1oa"/>
+                <constraint firstItem="Rgf-D9-72P" firstAttribute="width" secondItem="xj3-iV-2ro" secondAttribute="width" id="uDr-5I-1Ac"/>
+                <constraint firstAttribute="bottom" secondItem="gTR-8c-WxF" secondAttribute="bottom" constant="50" id="wjW-rR-Myv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Mp3-D9-YfP"/>
+            <size key="customSize" width="180" height="150"/>
+            <connections>
+                <outlet property="imgView" destination="gTR-8c-WxF" id="jBO-fs-fzE"/>
+                <outlet property="name" destination="xj3-iV-2ro" id="c6c-nB-N39"/>
+                <outlet property="price" destination="Rgf-D9-72P" id="UKq-w2-KOm"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="taozi.png" width="16" height="16"/>
+    </resources>
+</document>

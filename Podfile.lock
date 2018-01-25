@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Bugly (2.4.8)
   - DZNEmptyDataSet (1.8.1)
   - FDStackView (1.0)
   - JHUD (0.3.0)
@@ -25,15 +26,25 @@ PODS:
     - REFormattedNumberField (~> 1.1.5)
     - REValidation (~> 0.1.4)
   - REValidation (0.1.4)
+  - SDAutoLayout (2.2.0)
   - SDCycleScrollView (1.66):
     - SDWebImage (~> 4.0.0)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - UMengUShare/Core (6.4.6):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.6)
+  - UMengUShare/Social/ReducedWeChat (6.4.6):
+    - UMengUShare/Core
+  - UMengUShare/UI (6.4.6):
+    - UMengUShare/Core
+  - WechatOpenSDK (1.8.0)
   - WMPageController (2.3.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - Bugly
   - DZNEmptyDataSet (= 1.8.1)
   - FDStackView (= 1.0)
   - JHUD (= 0.3.0)
@@ -41,12 +52,17 @@ DEPENDENCIES:
   - MBProgressHUD (= 1.0.0)
   - ReactiveObjC (= 3.0.0)
   - RETableViewManager (= 1.7)
+  - SDAutoLayout
   - SDCycleScrollView (= 1.66)
   - SDWebImage (= 4.0.0)
+  - UMengUShare/Social/ReducedWeChat
+  - UMengUShare/UI (= 6.4.6)
+  - WechatOpenSDK
   - WMPageController (= 2.3.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Bugly: da3c02408c14838d498429320545a8e439392978
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDStackView: 3a4bbe0ce9c35e974246a585168b9da8c32213f1
   JHUD: 17650f65045d9843a7ad19f6a0b1eac6c78a45d2
@@ -56,10 +72,13 @@ SPEC CHECKSUMS:
   REFormattedNumberField: 70fc5fb1218ebd5ee9983820defd12806d5c6ec6
   RETableViewManager: 0f24d796c42c0890d38c79cc9aeb3871e186726e
   REValidation: 38c4de1be58455f8b00aab208ac80db316a66b7f
+  SDAutoLayout: c5509e77ae75735d9a39f7bc83dba6d3f75d49d8
   SDCycleScrollView: e3ade90e9b3159bec04330b208fbfd81c3f3b671
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  UMengUShare: fdbbf86353976727af26a66e9a84314ecb59c816
+  WechatOpenSDK: 0ee07a8d492299d3e47372a33da5af26524a7576
   WMPageController: 9f219bb8912a1a1f51af11fde61e2682a7b7e7f2
 
-PODFILE CHECKSUM: 5e3562a5f82e569a23895465ef48d72e4bfd5615
+PODFILE CHECKSUM: fd6fe440c64d77ae0ee2c51643710356920ada29
 
 COCOAPODS: 1.3.1

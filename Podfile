@@ -17,4 +17,12 @@ target 'NiuMang' do
     pod 'RETableViewManager', '1.7'
     pod 'WMPageController','2.3.0'
     pod 'ReactiveObjC', '3.0.0'
+    pod 'WechatOpenSDK'
+    # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+    # use_frameworks!
+    pod 'UMengUShare/UI','6.4.6'
+    # 集成微信(精简版0.2M)
+    pod 'UMengUShare/Social/ReducedWeChat'
+    pod 'Bugly'
+    pod 'SDAutoLayout'
 end
