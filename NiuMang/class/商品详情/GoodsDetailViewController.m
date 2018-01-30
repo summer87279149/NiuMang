@@ -138,7 +138,7 @@
         HIDEHUD
         if ([response[@"status"] intValue]==1) {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"OK" message:@"已下单,请去'我的订单'完成支付" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 [self.navigationController popViewControllerAnimated:YES];
             }];
             [alertController addAction:okAction];

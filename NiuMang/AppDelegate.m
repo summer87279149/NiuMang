@@ -96,6 +96,7 @@
         // 其他如支付等SDK的回调
     }
     if ([url.host isEqualToString:@"safepay"]) {
+        
     }else{
         [WXApi handleOpenURL:url delegate:self];
     }

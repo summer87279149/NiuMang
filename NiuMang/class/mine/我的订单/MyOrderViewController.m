@@ -22,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的订单";
+    [[NSNotificationCenter defaultCenter]addObserverForName:@"WXPaySuccess" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
     self.cellArr = [NSMutableArray array];
     SHOWHUD
     [RequestManager queryOrderWithUid:[UserModel userId] success:^(id response) {
@@ -40,6 +43,7 @@
     }];
     [self.view addSubview: self.tableview];
 }
+
 -(UITableView*)tableview{
     
     if(!_tableview){

@@ -24,14 +24,14 @@
 -(void)setModel:(OrderCellModel *)model{
     _model = model;
     self.name.text = [NSString stringWithFormat:@"%@ %@ %@",model.shopname,model.paymentTradeStatus==0?@"未支付":@"已支付",[self timeWithTimeIntervalString:model.time]];
+    
     if (model.paymentTradeStatus==0) {
         self.buyBtn.hidden = NO;
     }else{
         self.buyBtn.hidden = YES;
     }
+    
     self.fahuo.text = model.status==0?@"未发货":@"已发货";
-    
-    
     self.weight.text = [NSString stringWithFormat:@"%@,%@",model.goodsName,model.size];
     self.numbers.text = [NSString stringWithFormat:@"共%ld件商品",(long)model.count];
     self.totalprice.text = [NSString stringWithFormat:@"合计:%@(含运费)",model.total];
