@@ -203,4 +203,11 @@
         xt_error(error);
     }];
 }
++(void)wxPayWithOrder_sn:(NSString*)order_sn andPrice:(NSString*)price success:(Success)xt_success error:(Error)xt_error{
+    [XTRequestManager GET:XT_REQUEST_URL(@"/api/pay/zhifu") parameters:@{@"uid":[UserModel userId],@"order_sn":order_sn,@"price":price} responseSeializerType:NHResponseSeializerTypeDefault success:^(id responseObject) {
+        xt_success(responseObject);
+    } failure:^(NSError *error) {
+        xt_error(error);
+    }];
+}
 @end

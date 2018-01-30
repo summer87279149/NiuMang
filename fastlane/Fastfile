@@ -1,0 +1,83 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+
+   desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+    # sync_code_signing(type: "appstore") # more information: https://codesigning.guide
+    
+    gym(scheme: "NiuMang",
+            workspace: "NiuMang.xcworkspace",
+            include_bitcode: false,silent: true)
+    pilot
+
+    # sh "your_script.sh"
+    # You can also use other beta testing services here (run `fastlane actions`)
+  end
+
+  desc "Deploy a new version to the App Store"
+  lane :release do
+    #增加build版本号,需要先配置build setting
+    increment_build_number
+    increment_version_number
+    #打包
+    gym(workspace:'NiuMang.xcworkspace',scheme:'NiuMang',export_method:'app-store')
+    #发布到AppStore
+    deliver(force: true,skip_screenshots: true)
+
+    #发布testflight测试
+    pilot
+  end
+
+  desc 'screenshots and upload_to_itunec_connect'
+  lane :screenshots do
+    capture_screenshots( 
+    workspace: 'NiuMang.xcworkspace',
+    scheme: 'NiuMangUITests',
+    clear_previous_screenshots: true)
+    frame_screenshots(white: true)
+    # upload_to_app_store
+  end
+
+
+  desc "上传到蒲公英"
+  lane :upload_to_pgy do
+    # get_certificates           
+    # get_provisioning_profile
+    gym(export_method: "ad-hoc",scheme:"NiuMang",workspace: "NiuMang.xcworkspace",include_bitcode: false,silent: true)
+    pgyer(api_key: "e39a0587c256c897f5d143a98c52239e", user_key: "2be284c12d0a01fe53bcb6baf1292391",update_description: "使用fastlane更新")
+  end
+  # You can define as many lanes as you want
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+    # slack(
+    #   message: "Successfully deployed new App Update."
+    # )
+  end
+
+  error do |lane, exception|
+    # slack(
+    #   message: exception.message,
+    #   success: false
+    # )
+  end
+
+
+
+
+end

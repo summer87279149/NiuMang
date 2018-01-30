@@ -21,6 +21,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //向微信注册wx4f58ec9ce04c7d8c
+    [WXApi registerApp:USHARE_WX_APPKEY];
     [self setupBugly];
     [self setupUmeng];
     self.window.backgroundColor = [UIColor whiteColor];

@@ -5,6 +5,9 @@
 //  Created by mc on 2018/1/16.
 //  Copyright © 2018年 Summer. All rights reserved.
 //
+#import "WXApi.h"
+#import "WXApiRequestHandler.h"
+#import "WXApiObject.h"
 #import "OrderCellModel.h"
 #import "MyOrderTableViewCell.h"
 #import "MyOrderViewController.h"
@@ -65,8 +68,18 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MyOrderTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:@"MyOrderTableViewCellID" forIndexPath:indexPath];
     WS(weakSelf)
+    OrderCellModel * model = self.cellArr[indexPath.row];
     cell.buyBlock = ^{
-      //去支付
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+        [RequestManager wxPayWithOrder_sn:model.num andPrice:model.total success:^(id response) {
+            if (response[@"prepayid"]!=[NSNull null]) {
+                [WXApiRequestHandler jumpToBizPay:response];
+                [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+            }
+        } error:^(id response) {
+            
+        }];
+
     };
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (self.cellArr.count>0) {

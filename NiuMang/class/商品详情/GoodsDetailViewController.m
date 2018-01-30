@@ -79,44 +79,36 @@
     UITabBarController*tabbar = (UITabBarController*)[UIApplication sharedApplication].delegate.window.rootViewController;
     tabbar.selectedIndex = 0;
 }
-- (IBAction)share:(UIButton *)sender { //显示分享面板
+- (IBAction)share:(UIButton *)sender {
     [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-        // 根据获取的platformType确定所选平台进行下一步操作
-        NSLog(@"根据获取的platformType确定所选平台进行下一步操作%ld",(long)platformType);
         [self shareWebPageToPlatformType:platformType];
     }];
 }
 - (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
 {
-    //创建分享消息对象
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
     
-    //创建网页内容对象
-//    NSString* thumbURL =  @"https://www.baidu.com";
     UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"欢迎使用牛忙" descr:@"欢迎使用牛忙商城" thumImage:nil];
-    //设置网页地址
-    shareObject.webpageUrl = @"http://www.baidu.com";
     
-    //分享消息对象设置分享内容对象
+    shareObject.webpageUrl = @"https://itunes.apple.com/cn/app/%E7%89%9B%E5%BF%99%E5%95%86%E5%9F%8E/id1339982860?mt=8";
+    
     messageObject.shareObject = shareObject;
     
-    //调用分享接口
     [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
         if (error) {
             UMSocialLogInfo(@"************Share fail with error %@*********",error);
         }else{
             if ([data isKindOfClass:[UMSocialShareResponse class]]) {
                 UMSocialShareResponse *resp = data;
-                //分享结果消息
                 UMSocialLogInfo(@"response message is %@",resp.message);
-                //第三方原始返回的数据
+
                 UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
                 
             }else{
                 UMSocialLogInfo(@"response data is %@",data);
             }
         }
-        //        [self alertWithError:error];
+
     }];
 }
 - (IBAction)decrease:(UIButton *)sender {
@@ -141,18 +133,20 @@
 }
 
 - (IBAction)submitOrder:(UIButton *)sender {
+    SHOWHUD
     [RequestManager getOrderWithUid:[UserModel userId] andCounts:[NSString stringWithFormat:@"%d",self.num] andGoodID:self.goodID success:^(id response) {
+        HIDEHUD
         if ([response[@"status"] intValue]==1) {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"OK" message:@"您的订单已开始备货,请耐心等待送货上门" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"OK" message:@"已下单,请去'我的订单'完成支付" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 [self.navigationController popViewControllerAnimated:YES];
             }];
             [alertController addAction:okAction];
             [self presentViewController:alertController animated:YES completion:nil];
         }else{
-            [WXApiRequestHandler jumpToBizPay:response[@"data"]];
         }
     } error:^(id response) {
+        HIDEHUD
     }];
 }
 

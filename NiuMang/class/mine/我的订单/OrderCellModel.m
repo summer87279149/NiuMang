@@ -18,7 +18,7 @@ NSString *const kOrderCellModelSize = @"size";
 NSString *const kOrderCellModelStatus = @"status";
 NSString *const kOrderCellModelTime = @"time";
 NSString *const kOrderCellModelTotal = @"total";
-
+NSString *const kOrderCellModelNum = @"num";
 @interface OrderCellModel ()
 @end
 @implementation OrderCellModel
@@ -36,7 +36,9 @@ NSString *const kOrderCellModelTotal = @"total";
 	if(![dictionary[kOrderCellModelCount] isKindOfClass:[NSNull class]]){
 		self.count = [dictionary[kOrderCellModelCount] integerValue];
 	}
-
+    if(![dictionary[kOrderCellModelNum] isKindOfClass:[NSNull class]]){
+        self.num = dictionary[kOrderCellModelNum];
+    }
 	if(![dictionary[kOrderCellModelGoodsName] isKindOfClass:[NSNull class]]){
 		self.goodsName = dictionary[kOrderCellModelGoodsName];
 	}	
@@ -94,6 +96,9 @@ NSString *const kOrderCellModelTotal = @"total";
 	if(self.total != nil){
 		dictionary[kOrderCellModelTotal] = self.total;
 	}
+    if(self.num != nil){
+        dictionary[kOrderCellModelNum] = self.num;
+    }
 	return dictionary;
 
 }
@@ -124,6 +129,9 @@ NSString *const kOrderCellModelTotal = @"total";
 	if(self.total != nil){
 		[aCoder encodeObject:self.total forKey:kOrderCellModelTotal];
 	}
+    if(self.num != nil){
+        [aCoder encodeObject:self.num forKey:kOrderCellModelNum];
+    }
 
 }
 
@@ -142,6 +150,7 @@ NSString *const kOrderCellModelTotal = @"total";
 	self.status = [[aDecoder decodeObjectForKey:kOrderCellModelStatus] integerValue];
 	self.time = [aDecoder decodeObjectForKey:kOrderCellModelTime];
 	self.total = [aDecoder decodeObjectForKey:kOrderCellModelTotal];
+    self.num = [aDecoder decodeObjectForKey:kOrderCellModelNum];
 	return self;
 
 }
@@ -162,7 +171,7 @@ NSString *const kOrderCellModelTotal = @"total";
 	copy.status = self.status;
 	copy.time = [self.time copy];
 	copy.total = [self.total copy];
-
+    copy.num = [self.num copy];
 	return copy;
 }
 @end

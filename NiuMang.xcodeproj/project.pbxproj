@@ -2877,6 +2877,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VK6VB86T3H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2889,6 +2890,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ldwl.NiuMang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
 					"-Wno-unguarded-availability",
 					"-Wno-strict-prototypes",
@@ -2904,6 +2906,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VK6VB86T3H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2916,6 +2919,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ldwl.NiuMang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
 					"-Wno-unguarded-availability",
 					"-Wno-strict-prototypes",

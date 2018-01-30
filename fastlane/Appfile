@@ -1,0 +1,8 @@
+app_identifier "com.ldwl.NiuMang" # The bundle identifier of your app
+apple_id "15601458866@163.com" # Your Apple email address
+
+itc_team_id "118122717" # iTunes Connect Team ID
+team_id "VK6VB86T3H" # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

@@ -38,4 +38,5 @@
 +(void)search:(NSString*)key success:(Success)xt_success error:(Error)xt_error;
 +(void)tiXianSuccess:(Success)xt_success error:(Error)xt_error;
 +(void)confirmGetMoneySuccess:(Success)xt_success error:(Error)xt_error;
++(void)wxPayWithOrder_sn:(NSString*)order_sn andPrice:(NSString*)price success:(Success)xt_success error:(Error)xt_error;
 @end
